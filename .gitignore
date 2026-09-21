@@ -1,0 +1,38 @@
+# Credentials and Secrets
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# ML Data & Artifacts
+ml/data/raw/*
+!ml/data/raw/.gitkeep
+ml/data/processed/*
+!ml/data/processed/.gitkeep
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/node_modules/
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+tools/
+
+# OS
+.DS_Store
+Thumbs.db

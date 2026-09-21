@@ -1,0 +1,273 @@
+{
+  "generated_at": "2026-09-19 05:30:16 UTC",
+  "dataset_summary": {
+    "test_flows": 30000,
+    "classes": [
+      "BENIGN",
+      "DOS_DDOS",
+      "PORT_SCAN",
+      "BRUTE_FORCE",
+      "BOTNET"
+    ],
+    "unidirectional_feature_count": 24,
+    "bidirectional_feature_count": 65
+  },
+  "models": {
+    "xgboost_unidirectional": {
+      "accuracy": 0.9963,
+      "macro_precision": 0.9725,
+      "macro_recall": 0.9943,
+      "macro_f1": 0.9828,
+      "fpr_benign": 0.0047,
+      "inference_time_ms_per_1000": 2.67,
+      "per_class": {
+        "BENIGN": {
+          "precision": 0.9993,
+          "recall": 0.9953,
+          "f1_score": 0.9973,
+          "support": 20993
+        },
+        "DOS_DDOS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 4509
+        },
+        "PORT_SCAN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2422
+        },
+        "BRUTE_FORCE": {
+          "precision": 0.9907,
+          "recall": 1.0,
+          "f1_score": 0.9953,
+          "support": 1486
+        },
+        "BOTNET": {
+          "precision": 0.8727,
+          "recall": 0.9763,
+          "f1_score": 0.9216,
+          "support": 590
+        }
+      }
+    },
+    "random_forest_unidirectional": {
+      "accuracy": 0.9947,
+      "macro_precision": 0.9635,
+      "macro_recall": 0.9886,
+      "macro_f1": 0.9752,
+      "fpr_benign": 0.0061,
+      "inference_time_ms_per_1000": 18.47,
+      "per_class": {
+        "BENIGN": {
+          "precision": 0.9986,
+          "recall": 0.9939,
+          "f1_score": 0.9962,
+          "support": 20993
+        },
+        "DOS_DDOS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 4509
+        },
+        "PORT_SCAN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2422
+        },
+        "BRUTE_FORCE": {
+          "precision": 0.992,
+          "recall": 1.0,
+          "f1_score": 0.996,
+          "support": 1486
+        },
+        "BOTNET": {
+          "precision": 0.8272,
+          "recall": 0.9492,
+          "f1_score": 0.884,
+          "support": 590
+        }
+      }
+    },
+    "xgboost_bidirectional": {
+      "accuracy": 0.9968,
+      "macro_precision": 0.977,
+      "macro_recall": 0.9941,
+      "macro_f1": 0.9852,
+      "fpr_benign": 0.0039,
+      "inference_time_ms_per_1000": 2.77,
+      "per_class": {
+        "BENIGN": {
+          "precision": 0.9993,
+          "recall": 0.9961,
+          "f1_score": 0.9977,
+          "support": 20993
+        },
+        "DOS_DDOS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 4509
+        },
+        "PORT_SCAN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2422
+        },
+        "BRUTE_FORCE": {
+          "precision": 0.99,
+          "recall": 1.0,
+          "f1_score": 0.995,
+          "support": 1486
+        },
+        "BOTNET": {
+          "precision": 0.8956,
+          "recall": 0.9746,
+          "f1_score": 0.9334,
+          "support": 590
+        }
+      }
+    },
+    "random_forest_bidirectional": {
+      "accuracy": 0.9941,
+      "macro_precision": 0.9584,
+      "macro_recall": 0.9911,
+      "macro_f1": 0.9733,
+      "fpr_benign": 0.0073,
+      "inference_time_ms_per_1000": 7.88,
+      "per_class": {
+        "BENIGN": {
+          "precision": 0.9989,
+          "recall": 0.9927,
+          "f1_score": 0.9958,
+          "support": 20993
+        },
+        "DOS_DDOS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 4509
+        },
+        "PORT_SCAN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2422
+        },
+        "BRUTE_FORCE": {
+          "precision": 0.9907,
+          "recall": 1.0,
+          "f1_score": 0.9953,
+          "support": 1486
+        },
+        "BOTNET": {
+          "precision": 0.8023,
+          "recall": 0.9627,
+          "f1_score": 0.8752,
+          "support": 590
+        }
+      }
+    },
+    "isolation_forest": {
+      "threat_detection_rate": 0.9434,
+      "benign_false_alarm_rate": 0.0332,
+      "threat_samples_tested": 9007,
+      "benign_samples_tested": 20993
+    }
+  },
+  "comparison": [
+    {
+      "model_type": "Random Forest",
+      "unidirectional_accuracy": 0.9947,
+      "bidirectional_accuracy": 0.9941,
+      "accuracy_delta": 0.0006,
+      "unidirectional_macro_f1": 0.9752,
+      "bidirectional_macro_f1": 0.9733,
+      "f1_delta": 0.0019,
+      "unidirectional_fpr_benign": 0.0061,
+      "bidirectional_fpr_benign": 0.0073,
+      "unidirectional_features": 24,
+      "bidirectional_features": 65
+    },
+    {
+      "model_type": "XGBoost",
+      "unidirectional_accuracy": 0.9963,
+      "bidirectional_accuracy": 0.9968,
+      "accuracy_delta": -0.0005,
+      "unidirectional_macro_f1": 0.9828,
+      "bidirectional_macro_f1": 0.9852,
+      "f1_delta": -0.0024,
+      "unidirectional_fpr_benign": 0.0047,
+      "bidirectional_fpr_benign": 0.0039,
+      "unidirectional_features": 24,
+      "bidirectional_features": 65
+    }
+  ],
+  "top_features_unidirectional": [
+    {
+      "rank": 1,
+      "feature": "Total Fwd Packets",
+      "importance": 0.2981
+    },
+    {
+      "rank": 2,
+      "feature": "Destination Port",
+      "importance": 0.2497
+    },
+    {
+      "rank": 3,
+      "feature": "Flow Duration",
+      "importance": 0.2208
+    },
+    {
+      "rank": 4,
+      "feature": "Fwd IAT Mean",
+      "importance": 0.2027
+    },
+    {
+      "rank": 5,
+      "feature": "Fwd Packet Length Max",
+      "importance": 0.0127
+    },
+    {
+      "rank": 6,
+      "feature": "Init_Win_bytes_forward",
+      "importance": 0.0054
+    },
+    {
+      "rank": 7,
+      "feature": "Total Length of Fwd Packets",
+      "importance": 0.0029
+    },
+    {
+      "rank": 8,
+      "feature": "Fwd IAT Max",
+      "importance": 0.0014
+    },
+    {
+      "rank": 9,
+      "feature": "Fwd Packets/s",
+      "importance": 0.001
+    },
+    {
+      "rank": 10,
+      "feature": "Fwd IAT Min",
+      "importance": 0.001
+    }
+  ],
+  "findings": {
+    "main_finding": "Unidirectional models retain approximately 97-99% of bidirectional detection accuracy while requiring zero reverse-traffic state tracking (on synthetic data).",
+    "cost_of_losing_reverse_traffic": "Macro F1 drops by only 0.24% in XGBoost, suggesting high feasibility for unidirectional taps and asymmetric routes.",
+    "key_unidirectional_signals": [
+      "Total Fwd Packets",
+      "Destination Port",
+      "Flow Duration",
+      "Fwd IAT Mean"
+    ]
+  }
+}

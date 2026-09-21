@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read-only access for metrics, stats, simulationChunks, and alerts
+    match /metrics/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /stats/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /simulationChunks/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /alerts/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    // Block client writes everywhere else
+    match /{document=**} {
+      allow read: if false;
+      allow write: if false;
+    }
+  }
+}
